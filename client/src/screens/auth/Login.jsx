@@ -1,10 +1,23 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
+import {login} from '../../auth/auth';
 
 function Login(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const isLoggedIn = localStorage.getItem('token');
     
+    useEffect(() => {
+        if (isLoggedIn) {
+          alert('You are already logged in. Please logout to login from a different account.');
+          window.location.href = '/';
+        }
+    }, [isLoggedIn]);
+
+    if(isLoggedIn){
+        return null;
+    }
+
     const handleSubmit = async(e) => {
         e.preventDefault();
         axios.post('http://localhost:3001/login', {email, password})
@@ -15,7 +28,8 @@ function Login(){
             }else{
                 localStorage.setItem('token', data.token);
                 console.log("Navigating to /");
-                window.location.href = '/';
+                // window.location.href = '/';
+                login();
             }
         })
         .catch(err => alert(err.response.data.error))

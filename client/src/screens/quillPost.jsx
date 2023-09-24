@@ -156,6 +156,8 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 import "./CreatePost.css"; // Import your CSS file for styling
+import {Navigate} from "react-router-dom";
+import Editor from "./editor";
 
 
 const TOOLBAR_OPTIONS = [
@@ -171,24 +173,62 @@ const TOOLBAR_OPTIONS = [
 ];
 
 export default function CreatePost() {
+    const [title,setTitle] = useState('');
+    const [summary,setSummary] = useState('');
+    const [content,setContent] = useState('');
     const [quill, setQuill] = useState(null);
     const quillRef = useRef(null);
+
   
-    useEffect(() => {
-      if (quillRef.current === null) {
-        const editor = document.createElement("div");
-        editor.id = "editor-container"; // Use a unique ID or class
-        document.querySelector(".container").appendChild(editor);
-        const q = new Quill(editor, {
-          theme: "snow",
-          modules: { toolbar: TOOLBAR_OPTIONS },
-        });
-        q.setText("Start typing...");
-        setQuill(q);
-        quillRef.current = q;
-      }
-    }, []);
-  
-  
-    return <div className="container"></div>; 
+    return(
+      <form>
+        <input type="title" placeholder = {'Title'} value={title} onChange ={ev=>setTitle(ev.target.value)}/>
+        <input type="summary" placeholder = {'Summary'} value={summary} onChange ={ev=>setSummary(ev.target.value)}/>
+        <Editor value={content}  />
+      </form>
+    );  
   }
+
+// export default function CreatePost() {
+//   const [title,setTitle] = useState('');
+//   const [summary,setSummary] = useState('');
+//   const [content,setContent] = useState('');
+//   const [files, setFiles] = useState('');
+//   const [redirect, setRedirect] = useState(false);
+//   async function createNewPost(ev) {
+//     const data = new FormData();
+//     data.set('title', title);
+//     data.set('summary', summary);
+//     data.set('content', content);
+//     data.set('file', files[0]);
+//     ev.preventDefault();
+//     const response = await fetch('http://localhost:3001/createPost', {
+//       method: 'POST',
+//       body: data,
+//       credentials: 'include',
+//     });
+//     if (response.ok) {
+//       setRedirect(true);
+//     }
+//   }
+
+//   if (redirect) {
+//     return <Navigate to={'/'} />
+//   }
+//   return (
+//     <form onSubmit={createNewPost}>
+//       <input type="title"
+//              placeholder={'Title'}
+//              value={title}
+//              onChange={ev => setTitle(ev.target.value)} />
+//       <input type="summary"
+//              placeholder={'Summary'}
+//              value={summary}
+//              onChange={ev => setSummary(ev.target.value)} />
+//       <input type="file"
+//              onChange={ev => setFiles(ev.target.files)} />
+//       <Editor value={content} onChange={setContent} />
+//       <button style={{marginTop:'5px'}}>Create post</button>
+//     </form>
+//   );
+// }

@@ -1,5 +1,6 @@
 import { BroadcastChannel } from 'broadcast-channel';
 const logoutChannel = new BroadcastChannel('logout');
+const loginchannel = new BroadcastChannel('login');
 
 export const logout = () => {
     logoutChannel.postMessage("Logout")
@@ -13,3 +14,16 @@ export const logoutAllTabs = () => {
         logoutChannel.close();
     }
 }
+
+export const login = () => {
+    loginchannel.postMessage("Login")
+    window.location.href = window.location.origin + "/";
+}
+
+export const loginAllTabs = () => {
+    loginchannel.onmessage = () => {
+        window.location.href = window.location.origin + "/";
+        loginchannel.close();
+    }
+}
+
