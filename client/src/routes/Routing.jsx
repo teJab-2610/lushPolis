@@ -1,8 +1,8 @@
 import React,{useEffect, useContext} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Signup from '../screens/Signup';
-import Login from '../screens/Login';
-import Logout from '../screens/Logout';
+import Signup from '../screens/auth/Signup';
+import Login from '../screens/auth/Login';
+import Logout from '../screens/auth/Logout';
 import CreatePost from '../screens/quillPost';
 
 const Routing = () => {

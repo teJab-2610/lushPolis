@@ -1,5 +1,5 @@
 import styles from "./syles.module.css";
-import {logout} from "../auth/auth";
+import {logout} from "../../auth/auth";
 function Logout(){
 	return (
 		<div className={styles.container}>
