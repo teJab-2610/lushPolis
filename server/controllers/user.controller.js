@@ -1,14 +1,14 @@
 const Post = require("../models/Post");
 
 exports.createPost = (req, res) => {
-    const { title, text } = req.body;
-    if (!title || !text){
+    const { title, content } = req.body;
+    if (!title || !content){
         console.log("Please add all the fields");
         return res.status(422).json({ error: "Please add all the fields" });
     }
     const post = new Post({
         title,
-        text,
+        content,
     });
     post
         .save()

@@ -158,18 +158,30 @@ import "quill/dist/quill.snow.css";
 import "./CreatePost.css"; // Import your CSS file for styling
 import {Navigate} from "react-router-dom";
 import Editor from "./editor";
+import axios from "axios";
+import {useNavigate} from 'react-router-dom';
+
+
 
 
 const TOOLBAR_OPTIONS = [
-  [{ header: [1, 2, 3, 4, 5, 6, false] }],
-  [{ font: [] }],
-  [{ list: "ordered" }, { list: "bullet" }],
-  ["bold", "italic", "underline"],
-  [{ color: [] }, { background: [] }],
-  [{ script: "sub" }, { script: "super" }],
-  [{ align: [] }],
-  ["image", "blockquote", "code-block"],
-  ["clean"],
+  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+  ['blockquote', 'code-block'],
+
+  [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+  [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+  [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+  [{ 'direction': 'rtl' }],                         // text direction
+
+  [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+  [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+  [{ 'font': [] }],
+  [{ 'align': [] }],
+
+  ['clean']                  
 ];
 
 export default function CreatePost() {
@@ -178,13 +190,24 @@ export default function CreatePost() {
     const [content,setContent] = useState('');
     const [quill, setQuill] = useState(null);
     const quillRef = useRef(null);
+    const navigate = useNavigate();
 
+    const handleSubmit = async (ev) => {
+      ev.preventDefault();
+      console.log("Creating Post");
+      axios.post("http://localhost:3001/createPost", { title, content })
+      .then(res => {console.log(res);
+      navigate('/');
+      })
+    };
+    
   
     return(
-      <form>
+      <form onSubmit={handleSubmit}>
         <input type="title" placeholder = {'Title'} value={title} onChange ={ev=>setTitle(ev.target.value)}/>
         <input type="summary" placeholder = {'Summary'} value={summary} onChange ={ev=>setSummary(ev.target.value)}/>
-        <Editor value={content}  />
+        <Editor value={content}  onChange={setContent}/>
+        <button style={{marginTop:'5px'}}>Create post</button>
       </form>
     );  
   }
