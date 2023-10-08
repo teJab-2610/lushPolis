@@ -1,12 +1,14 @@
 /* src/components/FileUpload.css */
 
 .file-upload-container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
   }
   
   h2 {
-    font-size: 1.5rem;
+    font-size: 24px;
     margin-bottom: 20px;
   }
   
@@ -15,9 +17,9 @@
   }
   
   button {
-    padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
   }
@@ -30,22 +32,122 @@
     margin-top: 20px;
   }
   
-  /* Styling for the list of plant suggestions */
-  .suggestion-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  /* Styling for the plant suggestions list */
+  ul {
+    list-style-type: none;
+    padding: 0;
   }
   
-  .suggestion-item {
-    text-align: center;
+  li {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  li:hover {
+    background-color: #f5f5f5;
+  }
+  
+  img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+  }
+  
+  /* Styling for the expanded details */
+  li div {
+    display: flex;
+    align-items: center;
+  }
+  
+  li div p {
+    margin: 0;
+  }
+  
+  li div p:first-child {
+    font-weight: bold;
+  }
+  
+  /* FileUpload.css */
+
+.file-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="file"] {
+    margin: 10px 0;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
     cursor: pointer;
   }
   
-  .suggestion-item img {
-    width: 100px;
-    height: 100px;
-  } 
-
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .response {
+    margin-top: 20px;
+  }
+  
+  .plant-list-container {
+    text-align: center;
+  }
+  
+  .plant-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .plant-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 5px;
+    background-color: #f5f5f5;
+    transition: background-color 0.2s;
+  }
+  
+  .plant-list li:hover {
+    background-color: #ddd;
+  }
+  
+  .plant-details-container {
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+  }
+  
+  .plant-details-container button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .plant-details-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add more specific styles as needed for additional details */
   
