@@ -1,19 +1,17 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Routing from './routes/Routing'
-import { useEffect } from "react";
-import { logoutAllTabs } from "./auth/auth";
-import {loginAllTabs} from "./auth/auth";
+import { useState } from 'react'
+
 function App() {
-  useEffect(() => {
-    logoutAllTabs()
-   }, [])
-    useEffect(() => {
-    loginAllTabs()
-    }, [])
+  const [count, setCount] = useState(0)
+ 
+  
+
   return (
     <>
-      <Routing/>
+      <div>
+      Beel
+    </div>
     </>
-  );
+  )
 }
+
 export default App
