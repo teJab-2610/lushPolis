@@ -1,0 +1,51 @@
+/* src/components/FileUpload.css */
+
+.file-upload-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  input[type="file"] {
+    margin: 10px 0;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .response {
+    margin-top: 20px;
+  }
+  
+  /* Styling for the list of plant suggestions */
+  .suggestion-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .suggestion-item {
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .suggestion-item img {
+    width: 100px;
+    height: 100px;
+  } 
+
+  
