@@ -1,19 +1,50 @@
-const axios = require('axios');
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-async function fetchFAQ(plantName) {
-  try {
-    const apiUrl = `http://localhost:4000/faq/${plantName}`; // Update with your backend URL
-    const response = await axios.get(apiUrl);
+function FetchFAQ({ plantName }) {
+  const [faqData, setFAQData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    if (response.status === 200) {
-      return response.data;
-    } else {
-      throw new Error('Error fetching FAQ data');
-    }
-  } catch (error) {
-    console.error(error);
-    throw error;
+  useEffect(() => {
+    const fetchFAQData = async (plantName) => {
+      try {
+        const apiUrl = `http://localhost:4000/plants/faq/${plantName}`;
+        const response = await axios.get(apiUrl, {
+          baseURL: 'http://localhost:4000',
+        });
+        setFAQData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching FAQ data:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchFAQData(plantName);
+  }, [plantName]);
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
+
+  return (
+    <div>
+      <h2>FAQs for {plantName}</h2>
+      {faqData.length > 0 ? (
+        <ul>
+          {faqData.map((item, index) => (
+            <li key={index}>
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+              <div className="tags">Tags: {item.tags}</div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No FAQs found for {plantName}</p>
+      )}
+    </div>
+  );
 }
 
-module.exports = fetchFAQ;
+export default FetchFAQ;

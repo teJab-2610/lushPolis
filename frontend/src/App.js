@@ -24,6 +24,7 @@ function App() {
             <br />
             <br />
             <li>
+              
               <Link to="/search" className="nav-button">
                 Plant Search
               </Link>

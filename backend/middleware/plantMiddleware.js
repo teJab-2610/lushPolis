@@ -148,8 +148,10 @@ const fetchcareGuide = async (plantName) => {
         if (response.status === 200) {
             const result = response.data;
             console.log(result.data);
-            const watering = result.data[0].section[0].description;
-            const sunlight = result.data[0].section[1].description;
+            //add null handlers
+            const watering = (result.data[0]?.details?.watering) || 'N/A';
+            const sunlight = (result.data[1]?.details?.sunlight) || 'N/A';
+
             const careGuide = { "watering": watering, "sunlight": sunlight };
             return careGuide;
         }

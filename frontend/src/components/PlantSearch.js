@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
+import FetchCareGuide from './fetchCareGuide.js';
+import FetchFAQ from './fetchFAQ.js';
 
 function SearchPlant() {
     const [plantName, setPlantName] = useState('');
@@ -13,16 +15,12 @@ function SearchPlant() {
         setPlantName(e.target.value);
     };
 
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-
         try {
             const plantData = await fetchPlantData(plantName);
             setResponse(plantData);
-            setPlantName('');
         } catch (error) {
             console.error('Error searching plant:', error);
         } finally {
@@ -117,8 +115,7 @@ function SearchPlant() {
                 isOpen={isCareGuideOpen}
                 onRequestClose={closeCareGuideModal}
             >
-                <h2>Care Guide</h2>
-                <p>Random text for the Care Guide.</p>
+                <FetchCareGuide plantName={plantName} />
                 <button onClick={closeCareGuideModal}>Close</button>
             </Modal>
 
@@ -127,8 +124,7 @@ function SearchPlant() {
                 isOpen={isFAQOpen}
                 onRequestClose={closeFAQModal}
             >
-                <h2>FAQ</h2>
-                <p>Random text for the FAQ.</p>
+                <FetchFAQ plantName={plantName} />
                 <button onClick={closeFAQModal}>Close</button>
             </Modal>
         </div>
