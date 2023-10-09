@@ -8,7 +8,7 @@ The team consists of Teja Battula, Chetan Moturi, Vidhyabhushan Mallela, ASPVM A
 
 This repo is the project work for the Software Engineering Course - CS302L.
 
-##How to Install
+## How to Install
 The project is made using MERN stack, before installing please make sure that you install the latest version of Node.js from [[here]](https://nodejs.org/en/download).
 
 To check node version
