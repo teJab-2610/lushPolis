@@ -3,7 +3,6 @@ const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 const express = require('express');
-const workouts = require('./routes/workouts');
 const plants = require('./routes/plants');
 const fileUpload = require('express-fileupload'); 
 
@@ -22,7 +21,6 @@ app.use((req,res,next) =>{
     next();
 } )
 //routes
-app.use('/workouts',workouts);
 app.use('/plants',plants);
 
 mongoose.connect(process.env.MONGO_URI)

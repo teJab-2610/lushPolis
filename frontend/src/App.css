@@ -1,0 +1,32 @@
+/* App.css */
+
+.App {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .navbar {
+    background-color: #007bff;
+    padding: 10px 0;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .nav-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #0056b3;
+  }
+  
