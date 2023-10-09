@@ -1,32 +1,103 @@
 /* App.css */
 
-.App {
-    text-align: center;
-    padding: 20px;
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
   }
   
-  .navbar {
+  /* Header Styles */
+  .header {
     background-color: #007bff;
-    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  /* Navigation Styles */
+  .nav {
+    text-align: center;
+    margin-top: 20px;
   }
   
   .nav-links {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
   }
   
+  .nav-link {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  /* Add margin to the "Plant Identification" button */
   .nav-button {
     text-decoration: none;
-    color: #fff;
-    background-color: #007bff;
     padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
     border-radius: 5px;
-    margin: 5px;
-    font-size: 18px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
+    margin-right: 10px; /* Add margin to separate the buttons */
   }
   
   .nav-button:hover {
     background-color: #0056b3;
   }
+  
+  /* Main Content Styles */
+  .App {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* App.css */
+
+/* Style for the button */
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Change button background color on hover */
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for the button when in the disabled state */
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none; /* Disable pointer events when disabled */
+    opacity: 0.7; /* Reduce opacity for a disabled look */
+  }
+  
+  /* Add responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    button {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+  }
+  
+  /* Additional styles for your components can be added here */
   

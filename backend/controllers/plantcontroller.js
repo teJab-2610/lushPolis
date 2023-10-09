@@ -94,7 +94,8 @@ const getPlant = async (req, res) => {
 const searchPlant = async (req, res) => {
     const { plantName } = req.params;
     try {
-        const plant = await fetchPlant(search_text);
+        console.log(plantName);
+        const plant = await fetchPlant(plantName);
         console.log(plant);
         const data = await fetchPlantdetails(plant.plantId);
         console.log(data);

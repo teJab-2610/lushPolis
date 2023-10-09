@@ -100,11 +100,17 @@ async function fetchPlantdetails(plantId) {
         const response = await axios.get(apiUrl);
         if (response.status === 200) {
             const result = response.data;
+            console.log(result);
+            console.log('hi');
+            console.log(result.plant_anatony?.join(', '));
             const detailsMap = {
+                commonName: result.common_name,
+                scientificName: result.scientific_name,
                 origin: result.origin,
                 other_name: result.other_name?.join(', '),
                 type: result.type,
                 dimension: result.dimension,
+                plant_anatony: result.plant_anatony?.map(item => `${item.part}: ${item.color.join(', ')}`).join(', '), // Process plant_anatomy
                 propagation: result.propagation?.join(', '),
                 watering: result.watering,
                 depth_watering_requirement: result.depth_watering_requirement,
@@ -113,12 +119,17 @@ async function fetchPlantdetails(plantId) {
                 growth_rate: result.growth_rate,
                 care_level: result.care_level,
                 medicinal: result.medicinal,
+                sunlight: result.sunlight,
+                pruning_month: result.pruning_month?.join(', '),
+                pruning_count: result.pruning_count.amount,
+                pruning_interval: result.pruning_count.interval,
                 poisonous_to_humans: result.poisonous_to_humans,
                 poisonous_to_pets: result.poisonous_to_pets,
                 description: result.description,
                 image: result.default_image.original_url,
                 // Add other fields you want to include in the map
-            };
+              };
+              
             return detailsMap;
         } else {
             throw new Error('Failed to load plant details');

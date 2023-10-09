@@ -9,7 +9,6 @@ function FileUpload() {
     const [selectedPlant, setSelectedPlant] = useState(null);
     const [isFileSelected, setIsFileSelected] = useState(false);
 
-
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
         setIsFileSelected(true); // Set to true when a file is selected
@@ -103,7 +102,6 @@ function FileUpload() {
             </div>
         );
     };
-
 
     return (
         <div className="file-upload-container">

@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/identification', getPlant);
 
-router.get('/search/:plantName',searchPlant);
+router.get('/search/:plantName', searchPlant);
 
 router.get('/careguide/:plantName',fetchcareGuidedetails);
 
