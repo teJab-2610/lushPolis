@@ -49,11 +49,12 @@ Nothing specific is required, A web browser with internet connection is enough.
 | ------------ | ------------- | ----------- |
 | 1.       | User Login/Register| Basic Account creation|
 | 2.       | Blogs | Users can read other blogs, post their views, save the post, like the post, etc|
-| 3.       | Posting/Editing Blogs    | Allow users to make their own blog posts, edit them and delete them|
+| 3.       | Posting    | Allow users to make their own blog posts and post them for others to see it|
 | 4. | Interest Groups | Allow users to form groups for people with similar interests|
 | 5. | Plant Search and Id using APIs | Utilizing 3rd-party APIs to implement Plant Identification using images and a plant text search feature |
 | 6. | Group Chats | Users can form group chats in which they can talk to other users |
 | 7. | Plant Diary | A basic plant diary in wich users can log their plants and track them | 
+
 
 ## Design Decisions
 
@@ -64,9 +65,9 @@ Nothing specific is required, A web browser with internet connection is enough.
 3. **User Authentication**: Used JWT auth.
 
 ## Contributions
-- Teja Battula: Authentication, Profiles, Use cases document.
-- Andaluri SPVM Aditya: Authentication, Frontend UI, Community posts.
+- Teja Battula: Authentication, Profiles, Use cases document, Blogs Implementation.
+- Andaluri SPVM Aditya: Authentication, Frontend of all pages.
 - Vidhyabhushan Mallela: Plant Identification and Search using API, Use cases document.
 - Chetan Moturi: Plant Diary implementation, ReadMe and Use Cases Diagram.
-- VSKSS Narayana Rao: Group Chat and Interest Groups.
+- VSKSS Narayana Rao: Group Chat and Interest Groups, and Blogs Implementation.
 
