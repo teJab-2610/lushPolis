@@ -1,5 +1,3 @@
-// App.js
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import FileUpload from './components/FileUpload';
@@ -24,7 +22,6 @@ function App() {
             <br />
             <br />
             <li>
-              
               <Link to="/search" className="nav-button">
                 Plant Search
               </Link>
@@ -33,10 +30,10 @@ function App() {
         </nav>
         <main className="main-content">
           <Switch>
-            <Route path="/identification">
+            <Route exact path="/identification">
               <FileUpload />
             </Route>
-            <Route path="/search">
+            <Route exact path="/search">
               <PlantSearch />
             </Route>
           </Switch>

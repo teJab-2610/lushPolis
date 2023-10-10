@@ -8,10 +8,17 @@ body {
     background-color: #f4f4f4;
     color: #333;
   }
+  body {
+    background-image: url('../public/images/bg1.jpg');
+    background-size: cover; /* This will make the background image cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-attachment: fixed; /* Keep the background image fixed while scrolling */
+    /* Add more styles as needed */
+  }
   
   /* Header Styles */
   .header {
-    background-color: #007bff;
+    background-color: #21bf29;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -42,7 +49,7 @@ body {
   .nav-button {
     text-decoration: none;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #1f8b26;
     color: #fff;
     border-radius: 5px;
     font-weight: bold;
@@ -51,7 +58,7 @@ body {
   }
   
   .nav-button:hover {
-    background-color: #0056b3;
+    background-color: #2aa732;
   }
   
   /* Main Content Styles */
@@ -64,10 +71,10 @@ body {
   }
   
   /* App.css */
-
+/* 
 /* Style for the button */
-button {
-    background-color: #007bff;
+/* button {
+    background-color: #1f8b26;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -76,28 +83,90 @@ button {
     font-size: 18px;
     margin-top: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-  }
+  } */
   
   /* Change button background color on hover */
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+  /* button:hover {
+    background-color: #2aa732;
+  } */
+   */
   /* Style for the button when in the disabled state */
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-    pointer-events: none; /* Disable pointer events when disabled */
-    opacity: 0.7; /* Reduce opacity for a disabled look */
+  html {
+    --blue: #159ce4;
+    --lgt-blue: #67cff3;
+    --drk-blue: #147ec1;
+    --black: #32383c;
   }
   
-  /* Add responsiveness for smaller screens */
-  @media (max-width: 768px) {
-    button {
-      font-size: 16px;
-      padding: 8px 16px;
-    }
+  a {
+    color: var(--blue);
+    transition: all 0.3s ease;
   }
+  
+  a:hover {
+    color: var(--lgt-blue);
+  }
+  
+  a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
+  }
+  
+  a:active {
+    color: var(--drk-blue);
+  }
+  
+  /* Add shadow and boundary to buttons when hovering */
+button {
+  display: block;
+  padding: 12px 38px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  color: var(--blue);
+  background-color: #21bf24;
+  border: 2px solid var(--blue);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to the button */
+}
+
+button:hover {
+  color: #52ab35;
+  background-color: var(--lgt-blue);
+  border-color: var(--lgt-blue);
+  transform: translateY(-2px); /* Add a slight upward shift on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Increase the shadow on hover */
+}
+
+button:active {
+  color: #fff;
+  background-color: var(--drk-blue);
+  border-color: var(--drk-blue);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px rgba(21, 156, 228, 0.4);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
   
   /* Additional styles for your components can be added here */
   

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Modal from 'react-modal';
 import FetchCareGuide from './fetchCareGuide.js';
 import FetchFAQ from './fetchFAQ.js';
+import './PlantSearch.css';
 
 function SearchPlant() {
     const [plantName, setPlantName] = useState('');
@@ -67,7 +68,7 @@ function SearchPlant() {
                         onChange={handleInputChange}
                     />
                 </label>
-                <button onClick={handleSubmit} disabled={isLoading}>
+                <button className="search-button" onClick={handleSubmit} disabled={isLoading}>
                     {isLoading ? 'Searching...' : 'Search'}
                 </button>
             </form>
@@ -77,6 +78,8 @@ function SearchPlant() {
                 <div className="search-results">
                     {response && (
                         <div className="plant-details">
+                            <br />
+                            <br />
                             <img
                                 src={response.image || 'placeholder-image-url'}
                                 alt={response.type || 'N/A'}
@@ -106,6 +109,7 @@ function SearchPlant() {
                             <p><strong>Description:</strong> {response.description || 'N/A'}</p>
                             <br />
                             <button onClick={openCareGuideModal}>Care Guide</button>
+                            <br />
                             <button onClick={openFAQModal}>FAQ</button>
                         </div>
                     )}

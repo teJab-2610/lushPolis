@@ -92,7 +92,7 @@ function FileUpload() {
       </label>
       <input type="file" id="file-input" accept="image/*" onChange={handleFileChange} />
       <br />
-      <button onClick={handleSubmit} disabled={isLoading}>
+      <button className="fileupload-button" onClick={handleSubmit} disabled={isLoading}>
         Submit
       </button>
       <div className="response">
@@ -100,6 +100,8 @@ function FileUpload() {
           <p>Loading...</p>
         ) : selectedPlant ? (
           <div>
+            <br />
+            <br />
             <img src={selectedPlant.image} alt={selectedPlant.name} className="selected-plant-image" />
             <div>
               <p><strong>Name:</strong> {selectedPlant.name}</p>
