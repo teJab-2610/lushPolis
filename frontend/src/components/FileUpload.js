@@ -84,22 +84,25 @@ function FileUpload() {
     return (
         <div className="file-upload-container">
             <h2>Upload an Image for Plant Identification</h2>
-            <label
+            {/* <label
                 htmlFor="file-input"
                 className={isFileSelected ? 'file-selected button-like-selected' : 'button-like'}
             >
                 {isFileSelected ? 'File Selected' : 'Choose a File'}
-            </label>
+            </label> */}
 
             {/* Apply the "hidden-input" class conditionally */}
-            <input
+            <label>
+                <input
                 type="file"
                 id="file-input"
                 accept="image/*"
                 onChange={handleFileChange}
-                className={isFileSelected ? 'hidden-input' : ''}
-            />
-            <br />
+                className={isFileSelected ? 'file-selected button-like-selected' : 'button-like'}
+            /></label>
+                
+
+            {/* <br /> */}
             <button className="fileupload-button" onClick={handleSubmit} disabled={isLoading}>
                 Submit
             </button>
@@ -135,10 +138,11 @@ function FileUpload() {
                     </div>
                 ) : response ? (
                     <ul className="plant-list">
+                        {/* Add a CSS class to the ul element */}
                         {response.map((plant, index) => (
                             <li key={index} onClick={() => handlePlantItemClick(plant)} className="plant-item">
                                 <div>
-                                    <img src={plant.image} alt={plant.name} />
+                                    <img className="Plant-imagelist" src={plant.image} alt={plant.name} />
                                 </div>
                                 <div className="plant-info">
                                     <p>Name: {plant.name}</p>

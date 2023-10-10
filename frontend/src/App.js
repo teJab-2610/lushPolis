@@ -1,10 +1,13 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import FileUpload from './components/FileUpload';
 import PlantSearch from './components/PlantSearch';
 import './App.css'; // Import your CSS file for styling
+import React, { useEffect, useState } from 'react';
 
 function App() {
+
+
+  
   return (
     <Router>
       <div className="App">

@@ -18,7 +18,7 @@ body {
 
 /* Header Styles */
 .header {
-  background-color: #21bf29;
+  background-color: green;
   color: #fff;
   text-align: center;
   padding: 20px 0;
@@ -49,7 +49,7 @@ body {
 .nav-button {
   text-decoration: none;
   padding: 10px 20px;
-  background-color: #1f8b26;
+  background-color: green;
   color: #fff;
   border-radius: 5px;
   font-weight: bold;
@@ -123,7 +123,7 @@ body {
 }
 .button-like {
   /* Styles for the "Choose a File" button */
-  background-color: #0A574E;
+  background-color: green;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -136,7 +136,7 @@ body {
 .button-like-selected {
   /* Styles for the "File Selected" button */
   background-color: #11a992; /* You can use a different color or style here */
-  color: #fff;
+  color: black;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -151,7 +151,7 @@ body {
 
 /* More Details Button */
 .moredetails {
-  background-color: #0A574E;
+  background-color: green;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -163,13 +163,13 @@ body {
 }
 
 .moredetails:hover {
-  background-color: #005A49;
+  background-color: #2aa732;
 }
 
 /* Care Guide and FAQ Buttons Styles */
 .careguide,
 .FAQ {
-  background-color: #0A574E;
+  background-color: green;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -180,7 +180,9 @@ body {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.careguide:hover,
+.careguide:hover{
+  background-color: #2aa732;
+}
 /* FileUpload.css */
 
 /* ... (previous styles) */
@@ -189,12 +191,12 @@ body {
 
 
 .button-like:hover {
-  background-color: #005A49;
+  background-color: #2aa732;
 }
 
 /* Submit Button Styles */
 .fileupload-button {
-  background-color: #0A574E;
+  background-color: green;
   color: #fff;
   padding: 10px 20px;
   border: none;
