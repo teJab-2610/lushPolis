@@ -14,7 +14,7 @@ function App() {
         <nav className="nav">
           <ul className="nav-links">
             <li>
-              <Link to="/identification" className="nav-button">
+            <Link to="/identification" className="nav-button">
                 Plant Identification
               </Link>
             </li>
@@ -28,6 +28,7 @@ function App() {
             </li>
           </ul>
         </nav>
+        <hr />
         <main className="main-content">
           <Switch>
             <Route exact path="/identification">
