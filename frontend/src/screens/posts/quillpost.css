@@ -1,0 +1,92 @@
+
+.title-input {
+    width: 100%;/* Allow the textarea to grow horizontally */
+    height: 70px; 
+    border: 2px solid grey;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none; /* Prevent manual resizing */
+    box-sizing: border-box; /* Include padding and border in total height */
+    line-height: normal; /* Reset line-height to normal */
+    overflow: hidden; /* Hide the scrollbar */
+}
+.title-input2 {
+    width: 100%;/* Allow the textarea to grow horizontally */
+    height: 50px; 
+    border: 2px solid grey;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none; /* Prevent manual resizing */
+    box-sizing: border-box; /* Include padding and border in total height */
+    line-height: normal; /* Reset line-height to normal */
+    overflow: hidden; /* Hide the scrollbar */
+}
+.title-input:focus {
+    border-color: black; /* Change border color on focus */
+}
+ .title-input2:focus {
+    border-color: black; /* Change border color on focus */
+}
+.title-input::placeholder {
+    /* Adjust placeholder alignment to the bottom */
+    vertical-align: bottom;
+}
+
+.row{
+    display: flex !important;
+}
+
+.icon-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icon {
+    height: 40px;
+    width: 40px;
+}
+.icon2 {
+    height: 30px;
+    width: 30px;
+}
+
+.ql-editor p{
+    font-family: 'Times New Roman', Times, serif !important;; 
+    font-size: 20px !important;; 
+    height: 100% !important;
+}
+
+.ql-snow .ql-editor img {
+    max-width: 100% !important;
+    display: flex  !important;
+    justify-content: center !important;
+}
+
+.gg{
+    background:url("../../assets/images/createPostBG2.png") bottom !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.marketing2{
+    background-color: white;
+    height: 100vh;
+    width: 100vh;
+    padding-top:8rem;
+}
+.text-box{
+    height: auto;
+    overflow-y: auto ;
+}
