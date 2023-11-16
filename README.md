@@ -25,14 +25,14 @@ Now, run the following commands to start the backend server,
 ~~~bash
 cd ./server
 npm install
-npm start
+npm run dev
 ~~~
 
 Next, run this in a separate terminal to start the frontend,
 ~~~bash
 cd ../client
-npm install
-npm run dev
+npm install --force
+npm start
 ~~~
 
 Nothing specific is required, A web browser with an internet connection is enough.
