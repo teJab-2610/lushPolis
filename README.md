@@ -55,17 +55,6 @@ Nothing specific is required, A web browser with an internet connection is enoug
 | 6. | Group Chats | Users can form group chats in which they can talk to other users |
 | 7. | Plant Diary | A basic plant diary in which users can log their plants and track them | 
 
-## Design Decisions
+## Design Decisions and Contributions
 
-1. **MongoDB models**: We have made separate models/schemas for Users, Posts, Comments, Plants, etc. This will allow us greater flexibility in utilizing these models.
-
-2. **To include Plant Chat(_release 2_) inside the Plant diary component**: This allows us to utilize the plant diary information easily for giving input to the LLM model for initializing plant chat.
-
-3. **User Authentication**: Used JWT auth.
-
-## Contributions
-- Teja Battula: Authentication, Profiles, Use cases document.
-- Andaluri SPVM Aditya: Authentication, Frontend UI, Community posts.
-- Vidhyabhushan Mallela: Plant Identification and Search using API, Use cases document.
-- Chetan Moturi: Plant Diary implementation, ReadMe and Use Cases Diagram.
-- VSKSS Narayana Rao: Group Chat and Interest Groups.
+Please look at the "LushPolis Report" pdf for the details. 
