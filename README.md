@@ -42,3 +42,15 @@ Nothing specific is required, A web browser with an internet connection is enoug
 
 
 ## Use cases
+
+### Release 1
+
+| SNo.   | Use Case Name | Description | 
+| ------------ | ------------- | ----------- |
+| 1.       | User Login/Register| Basic Account creation|
+| 2.       | Blogs | Users can read other blogs, post their views, save the post, like the post, etc|
+| 3.       | Posting/Editing Blogs    | Allow users to make their own blog posts, edit them and delete them|
+| 4. | Interest Groups | Allow users to form groups for people with similar interests|
+| 5. | Plant Search and ID using APIs | Utilizing 3rd-party APIs to implement Plant Identification using images and a plant text search feature |
+| 6. | Group Chats | Users can form group chats in which they can talk to other users |
+| 7. | Plant Diary | A basic plant diary in which users can log their plants and track them | 
